@@ -1,0 +1,25 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brambilla05/TODO.git"
+  },
+  "author": "Brambilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brambilla05/TODO/issues"
+  },
+  "homepage": "https://github.com/Brambilla05/TODO#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
