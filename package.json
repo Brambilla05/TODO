@@ -15,11 +15,12 @@
     "url": "https://github.com/Brambilla05/TODO/issues"
   },
   "homepage": "https://github.com/Brambilla05/TODO#readme",
-  "description": "",
+  "description": "Todo list with DB",
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.2",
     "http": "^0.0.1-security",
+    "mysql2": "^3.12.0",
     "path": "^0.12.7"
   }
 }
