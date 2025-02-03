@@ -5,16 +5,14 @@ const parentElement = document.getElementById("tb");
 const render = () => {
     console.log(todos);
     let html = "";
-    html += todos.map(e => {
-        if (!e.completed)
-            return "<tr><td>" + e.name + "</td><td><button type ='button' class = 'btn btn-outline-success'>Complete</button></td><td><button type ='button' class = 'btn btn-outline-danger'>Delete</button></td></tr>";
-        else
-            return "<tr class = 'todocompletata'><td>" + e.name + "</td><td><!--<button type = 'button' class = 'btn btn-outline-success'>Complete</button>--></td><td><button type = 'button' class = 'btn btn-outline-danger'>Delete</button></td></tr>";
-    })
+    html += todos.map((e,index) => {
+            return "<tr class='" + (e.completed ? "todocompletata" : "") + "'><td>" + e.name + "</td><td><button type ='button'" + "id='" + index + "'" + "class = 'btn btn-outline-success'>Complete</button></td><td><button type ='button' class = 'btn btn-outline-danger'>Delete</button></td></tr>";
+    }).join("");
+    console.log(html)
     parentElement.innerHTML = html;
+    console.log(document.querySelectorAll(".btn-outline-success"));
     document.querySelectorAll(".btn-outline-success").forEach((button, index) => {
         button.onclick = () => {
-            console.log("prova");
             completeTodo(todos[index]).then(() => {
                 load().then((json) => {
                     todos = json.todos;
@@ -23,6 +21,7 @@ const render = () => {
             });
         }
     })
+    
     document.querySelectorAll(".btn-outline-danger").forEach((button, index) => {
         button.onclick = () => {
             deleteTodo(todos[index].id).then(() => {
